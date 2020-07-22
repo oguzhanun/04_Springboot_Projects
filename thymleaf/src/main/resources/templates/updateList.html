@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>For Updating The List</title>
+</head>
+<body>
+	<h2>This is for updating the list</h2>
+	<hr>
+	<p th:text=${theThingToUpdate}/>
+	
+	<form action="#" th:action="@{/home/processList}" th:object="${theObject}" method="post">
+		<input type="text" th:value="${theObject.get(id)}"/>
+		<input type="submit"/>
+	</form>
+	
+</body>
+</html>

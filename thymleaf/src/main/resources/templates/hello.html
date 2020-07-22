@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Homepage</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+
+ 	<p class="style1">hello world</p>
+ 
+	<p th:text="'merhaba kardeş' + ' ' + ${theDate}"/>
+ 
+ 	<form action="#" th:action="@{/logout}" method="post">
+ 		<input type="submit" value="Logout"/>
+ 	</form>
+ 	
+ 	<form th:action="@{/home/uyeOlustur}" th:object="${uye}" method="post">
+ 		<input type="text" th:field="*{uye_id}"/>
+ 		<input type="text" th:field="*{password}"/>
+ 		<input type="hidden" th:field="*{aktif}" th:value=0/>
+ 		<input type="submit" value="Üye Ol"/>
+ 	</form>
+ 
+</body>
+</html>

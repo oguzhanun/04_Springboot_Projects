@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>İsim Listesi</title>
+	
+	<!-- bu da çalışıyor... -->
+	<!-- <link rel="stylesheet" href="../bootstrap/bootstrap.min.css"> -->
+	<link rel="stylesheet" th:href="@{/bootstrap/bootstrap.min.css}">
+	
+</head>
+<body class="container">
+
+	<h2>İsim Listesi</h2>
+	<hr>
+	<br><br>
+	
+	<table class="table table-bordered table-striped">
+		<thead class="thead-dark">
+			<tr>
+				<th>Numara</th>
+				<th>İsim</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="isim : ${theList}">
+				<td th:text="${theList.indexOf(isim)}"></td>
+				<td th:text="${isim}"></td>
+				<td> <a th:href="@{/home/updateList(id=${theList.indexOf(isim)},name=${isim})}">Update</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
